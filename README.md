@@ -3,7 +3,7 @@
 1. Clone this repo by entering the following
 
 ```bash
-  git clone this.repo.github
+  git clone https://github.com/FadedController/fullstack-blog.git
 ```
 
 2. Create python environment
