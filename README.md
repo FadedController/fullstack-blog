@@ -20,7 +20,8 @@
 3. Install the python dependencies
 
 ```bash
-  pip install .
+  pip install Flask
+  # future dependencies will go here...
 ```
 
 4. Install frontend dependencies
