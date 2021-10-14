@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import usePost from "./hooks/usePost";
+import Markdown from "markdown-to-jsx";
 
 const App = () => {
-  const [data, setData] = useState();
-
-  useEffect(() => {
-    fetch("/members").then((res) => {
-      res.json().then((data) => {
-        setData(data);
-      });
-    });
-  }, []);
-
+  const [postData, postLoading] = usePost("this-article");
   return (
     <div>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      {!postLoading && (
+        <>
+          <h1>{postData.title}</h1>
+          <Markdown>{postData.markdown}</Markdown>
+        </>
+      )}
     </div>
   );
 };
